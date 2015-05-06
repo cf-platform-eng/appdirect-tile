@@ -1,0 +1,249 @@
+---
+name: AppDirect-broker                                       # [1]
+product_version: 1.3.0                                      # [1]
+metadata_version: "1.3"                                    # [2]
+target_installer_version: 1.3
+stemcell:                                                  # [3]
+  name: bosh-vsphere-esxi-ubuntu-trusty-go_agent
+  file: bosh-stemcell-2865.1-vsphere-esxi-ubuntu-trusty-go_agent.tgz
+  # Download from https://s3.amazonaws.com/bosh-jenkins-artifacts/bosh-stemcell/vsphere/bosh-stemcell-2865.1-vsphere-esxi-ubuntu-trusty-go_agent.tgz
+  version: '2865.1'
+releases:                                                  # [5]
+  - name: AppDirect_broker
+    file: AppDirect_broker-1.3.tgz
+    version: '1.3'
+provides_product_versions:
+- name: AppDirect_broker
+  version: '1.3'
+requires_product_versions:
+- name: cf
+  version: "~> 1.0"
+label: AppDirect Service Broker Experimental
+description: AppDirect Service Broker Experimental Tile  ..
+image: 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
+
+
+
+
+
+rank: 50
+post_deploy_errands:
+- name: register-broker
+pre_delete_errands:
+- name: destroy-broker
+
+
+form_types:                                                # [8]
+  - name: AppDirect_broker_app
+    label: Service Broker Application
+    description: Service Broker configuration
+    property_inputs:                                       # [9]
+      - reference: .service_broker_url
+        label: App Direct Service Broker Url
+        description: App Direct Service Broker Url
+      - reference: .service_broker_user_name
+        label: AppDirect Service Broker username
+        description: AppDirect Service Broker username
+      - reference: .service_broker_user_password
+        label: AppDirect Service Broker user password
+        description: AppDirect Service Broker user password
+#      - reference: .appdirect_uaa_client_id
+#        label: AppDirect Client ID for Dashboard SSO
+#        description: AppDirect Client ID for Dashboard SSO
+#      - reference: .appdirect_uaa_client_secret
+#        label: AppDirect Client Secret for Dashboard SSO
+#        description: AppDirect Client Secret for Dashboard SSO
+#      - reference: .appdirect_uaa_redirect_uri
+#        label: AppDirect Redirect URI for Dashboard SSO
+#        description: AppDirect Redirect URI for Dashboard SSO
+
+
+property_blueprints:
+- name: encryption_key
+  type: secret
+- name: vm_credentials
+  type: salted_credentials
+  default:
+    identity: vcap
+### CUSTOM_VARIABLE_DEFN_BEGIN_MARKER
+- name: service_broker_url
+  type: string
+  configurable: true
+  default: _FILL_ME_
+- name: service_broker_user_name
+  type: string
+  configurable: true
+  default: _FILL_ME_
+- name: service_broker_user_password
+  type: string
+  configurable: true
+  default: _FILL_ME_
+#- name: appdirect_uaa_client_id
+#  type: string
+#  configurable: true
+#  default: appdirect-sso
+#- name: appdirect_uaa_client_secret
+#  type: string
+#  configurable: true
+#  default: _FILL_ME_
+#- name: appdirect_uaa_redirect_uri
+#  type: string
+#  configurable: true
+#  default: _FILL_ME_
+### CUSTOM_VARIABLE_DEFN_END_MARKER
+# This for any internal plans prebuilt into the service broker that needs to be registered with CF
+
+job_types:
+- name: register-broker
+  resource_label: Register AppDirect Service Broker
+  template: register-broker
+  release: AppDirect_broker
+  errand: true
+  resource_definitions:
+  - name: ram
+    type: integer
+    configurable: false
+    default: 512
+  - name: ephemeral_disk
+    type: integer
+    configurable: false
+    default: 2048
+  - name: persistent_disk
+    type: integer
+    configurable: false
+    default: 0
+  - name: cpu
+    type: integer
+    configurable: false
+    default: 1
+  static_ip: 0
+  dynamic_ip: 1
+  max_in_flight: 1
+  instance_definitions:
+  - name: instances
+    type: integer
+    configurable: false
+    default: 1
+  property_blueprints:
+  - name: vm_credentials
+    type: salted_credentials
+    default:
+      identity: vcap
+
+  manifest: |
+    domain: (( ..cf.cloud_controller.system_domain.value ))
+    app_domains:
+      - (( ..cf.cloud_controller.apps_domain.value ))
+    ssl:
+      skip_cert_verify: (( ..cf.ha_proxy.skip_cert_verify.value ))
+    uaa:
+      url: https://uaa.(( ..cf.cloud_controller.system_domain.value ))
+      clients:
+        AppDirect_broker:
+          secret: test
+    AppDirect_broker:
+      encryption_key: (( .properties.encryption_key.secret ))
+      cf:
+        admin_user: (( ..cf.uaa.system_services_credentials.identity ))
+        admin_password: (( ..cf.uaa.system_services_credentials.password ))
+      broker:
+        url: (( .properties.service_broker_url.value ))
+        user: (( .properties.service_broker_user_name.value ))
+        password: (( .properties.service_broker_user_password.value ))
+#      uaa:
+#        client_id: (( .properties.appdirect_uaa_client_id.value ))
+#        client_secret: (( .properties.appdirect_uaa_client_secret.value ))
+#        redirect_uri: (( .properties.appdirect_uaa_redirect_uri.value ))
+
+- name: destroy-broker
+  resource_label: Remove AppDirect Service Broker
+  template: destroy-broker
+  release: AppDirect_broker
+  errand: true
+  resource_definitions:
+  - name: ram
+    type: integer
+    configurable: false
+    default: 512
+  - name: ephemeral_disk
+    type: integer
+    configurable: false
+    default: 1024
+  - name: persistent_disk
+    type: integer
+    configurable: false
+    default: 0
+  - name: cpu
+    type: integer
+    configurable: false
+    default: 1
+  static_ip: 0
+  dynamic_ip: 1
+  max_in_flight: 1
+  instance_definitions:
+  - name: instances
+    type: integer
+    configurable: false
+    default: 1
+  property_blueprints:
+  - name: vm_credentials
+    type: salted_credentials
+    default:
+      identity: vcap
+
+  manifest: |
+    domain: (( ..cf.cloud_controller.system_domain.value ))
+    app_domains:
+      - (( ..cf.cloud_controller.apps_domain.value ))
+    ssl:
+      skip_cert_verify: (( ..cf.ha_proxy.skip_cert_verify.value ))
+    uaa:
+      url: https://uaa.(( ..cf.cloud_controller.system_domain.value ))
+      clients:
+        AppDirect_broker:
+          secret: test
+    AppDirect_broker:
+      encryption_key: (( .properties.encryption_key.secret ))
+      cf:
+        admin_user: (( ..cf.uaa.system_services_credentials.identity ))
+        admin_password: (( ..cf.uaa.system_services_credentials.password ))
+      broker:
+        url: (( .properties.service_broker_url.value ))
+        user: (( .properties.service_broker_user_name.value ))
+        password: (( .properties.service_broker_user_password.value ))
+
+- name: compilation
+  resource_label: compilation
+  resource_definitions:
+   - name: ram
+     type: integer
+     configurable: true
+     default: 1_024
+   - name: ephemeral_disk
+     type: integer
+     configurable: true
+     default: 1024
+   - name: persistent_disk
+     type: integer
+     configurable: true
+     default: 0
+   - name: cpu
+     type: integer
+     configurable: true
+     default: 2
+
+  static_ip: 0
+  dynamic_ip: 1
+  max_in_flight: 1
+
+  instance_definitions:
+    - name: instances
+      type: integer
+      default: 1
+
+update:
+  canaries: 1
+  canary_watch_time: 60000-240000
+  max_in_flight: 1
+  update_watch_time: 60000-240000
+

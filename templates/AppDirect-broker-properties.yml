@@ -1,0 +1,30 @@
+properties:
+  # EDIT ME -- change the domain names
+  domain: 10.244.0.34.xip.io
+  app_domains: 10.244.0.34.xip.io
+  uaa:
+    clients:
+      AppDirect_broker:
+        secret: 'test'
+  ssl:
+    skip_cert_verify: true
+  AppDirect_broker:
+    encryption_key: 'test'
+    # EDIT ME -- Change the app name and URI as needed
+
+    # Set the persistence type to 'mysql' for using my sql instance to store data
+    # Set the persistence type to 'custom' for using custom db (non-my sql) instance to store data
+    # Set the persistence type to 'none' if its all in-memory
+    persistence_store_type: none
+
+    #
+    # EDIT ME - remove if there are no On-Demand Plans that need to be created
+
+    cf:
+      admin_user: admin
+      admin_password: admin
+    broker:
+      user: _FILL_ME_
+      password: _FILL_ME_
+      url: _FILL_ME_
+
