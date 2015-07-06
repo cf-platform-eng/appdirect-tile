@@ -1,0 +1,253 @@
+---
+name: AppDirect-broker                                       # [1]
+product_version: 1.3.0                                      # [1]
+metadata_version: "1.3"                                    # [2]
+target_installer_version: 1.3
+stemcell:                                                  # [3]
+  name: bosh-vsphere-esxi-ubuntu-trusty-go_agent                           # UNCOMMENT for vSphere
+  file: bosh-stemcell-2865.1-vsphere-esxi-ubuntu-trusty-go_agent.tgz       # UNCOMMENT for vSphere
+  #name: light-bosh-aws-xen-hvm-ubuntu-trusty-go_agent                     # UNCOMMENT for AWS
+  #file: light-bosh-stemcell-2865.1-aws-xen-hvm-ubuntu-trusty-go_agent.tgz # UNCOMMENT for AWS
+  # Download from https://s3.amazonaws.com/bosh-jenkins-artifacts/bosh-stemcell/vsphere/bosh-stemcell-2865.1-vsphere-esxi-ubuntu-trusty-go_agent.tgz
+  version: '2865.1'
+releases:                                                  # [5]
+  - name: AppDirect_broker
+    file: AppDirect_broker-1.3.tgz
+    version: '1.3'
+provides_product_versions:
+- name: AppDirect_broker
+  version: '1.3'
+requires_product_versions:
+- name: cf
+  version: "~> 1.0"
+label: AppDirect Service Broker Experimental
+description: AppDirect Service Broker Experimental Tile  ..
+image: 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
+
+
+
+
+
+
+
+rank: 50
+post_deploy_errands:
+- name: register-broker
+pre_delete_errands:
+- name: destroy-broker
+
+
+form_types:                                                # [8]
+  - name: AppDirect_broker_app
+    label: Service Broker Application
+    description: Service Broker configuration
+    property_inputs:                                       # [9]
+      - reference: .service_broker_url
+        label: App Direct Service Broker Url
+        description: App Direct Service Broker Url
+      - reference: .service_broker_user_name
+        label: AppDirect Service Broker username
+        description: AppDirect Service Broker username
+      - reference: .service_broker_user_password
+        label: AppDirect Service Broker user password
+        description: AppDirect Service Broker user password
+#      - reference: .appdirect_uaa_client_id
+#        label: AppDirect Client ID for Dashboard SSO
+#        description: AppDirect Client ID for Dashboard SSO
+#      - reference: .appdirect_uaa_client_secret
+#        label: AppDirect Client Secret for Dashboard SSO
+#        description: AppDirect Client Secret for Dashboard SSO
+#      - reference: .appdirect_uaa_redirect_uri
+#        label: AppDirect Redirect URI for Dashboard SSO
+#        description: AppDirect Redirect URI for Dashboard SSO
+
+
+property_blueprints:
+- name: encryption_key
+  type: secret
+- name: vm_credentials
+  type: salted_credentials
+  default:
+    identity: vcap
+### CUSTOM_VARIABLE_DEFN_BEGIN_MARKER
+- name: service_broker_url
+  type: string
+  configurable: true
+  default: _FILL_ME_
+- name: service_broker_user_name
+  type: string
+  configurable: true
+  default: _FILL_ME_
+- name: service_broker_user_password
+  type: string
+  configurable: true
+  default: _FILL_ME_
+#- name: appdirect_uaa_client_id
+#  type: string
+#  configurable: true
+#  default: appdirect-sso
+#- name: appdirect_uaa_client_secret
+#  type: string
+#  configurable: true
+#  default: _FILL_ME_
+#- name: appdirect_uaa_redirect_uri
+#  type: string
+#  configurable: true
+#  default: _FILL_ME_
+### CUSTOM_VARIABLE_DEFN_END_MARKER
+# This for any internal plans prebuilt into the service broker that needs to be registered with CF
+
+job_types:
+- name: register-broker
+  resource_label: Register AppDirect Service Broker
+  template: register-broker
+  release: AppDirect_broker
+  errand: true
+  resource_definitions:
+  - name: ram
+    type: integer
+    configurable: false
+    default: 512
+  - name: ephemeral_disk
+    type: integer
+    configurable: false
+    default: 2048
+  - name: persistent_disk
+    type: integer
+    configurable: false
+    default: 0
+  - name: cpu
+    type: integer
+    configurable: false
+    default: 1
+  static_ip: 0
+  dynamic_ip: 1
+  max_in_flight: 1
+  instance_definitions:
+  - name: instances
+    type: integer
+    configurable: false
+    default: 1
+  property_blueprints:
+  - name: vm_credentials
+    type: salted_credentials
+    default:
+      identity: vcap
+
+  manifest: |
+    domain: (( ..cf.cloud_controller.system_domain.value ))
+    app_domains:
+      - (( ..cf.cloud_controller.apps_domain.value ))
+    ssl:
+      skip_cert_verify: (( ..cf.ha_proxy.skip_cert_verify.value ))
+    uaa:
+      url: https://uaa.(( ..cf.cloud_controller.system_domain.value ))
+      clients:
+        AppDirect_broker:
+          secret: test
+    AppDirect_broker:
+      encryption_key: (( .properties.encryption_key.secret ))
+      cf:
+        admin_user: (( ..cf.uaa.system_services_credentials.identity ))
+        admin_password: (( ..cf.uaa.system_services_credentials.password ))
+      broker:
+        url: (( .properties.service_broker_url.value ))
+        user: (( .properties.service_broker_user_name.value ))
+        password: (( .properties.service_broker_user_password.value ))
+#      uaa:
+#        client_id: (( .properties.appdirect_uaa_client_id.value ))
+#        client_secret: (( .properties.appdirect_uaa_client_secret.value ))
+#        redirect_uri: (( .properties.appdirect_uaa_redirect_uri.value ))
+
+- name: destroy-broker
+  resource_label: Remove AppDirect Service Broker
+  template: destroy-broker
+  release: AppDirect_broker
+  errand: true
+  resource_definitions:
+  - name: ram
+    type: integer
+    configurable: false
+    default: 512
+  - name: ephemeral_disk
+    type: integer
+    configurable: false
+    default: 1024
+  - name: persistent_disk
+    type: integer
+    configurable: false
+    default: 0
+  - name: cpu
+    type: integer
+    configurable: false
+    default: 1
+  static_ip: 0
+  dynamic_ip: 1
+  max_in_flight: 1
+  instance_definitions:
+  - name: instances
+    type: integer
+    configurable: false
+    default: 1
+  property_blueprints:
+  - name: vm_credentials
+    type: salted_credentials
+    default:
+      identity: vcap
+
+  manifest: |
+    domain: (( ..cf.cloud_controller.system_domain.value ))
+    app_domains:
+      - (( ..cf.cloud_controller.apps_domain.value ))
+    ssl:
+      skip_cert_verify: (( ..cf.ha_proxy.skip_cert_verify.value ))
+    uaa:
+      url: https://uaa.(( ..cf.cloud_controller.system_domain.value ))
+      clients:
+        AppDirect_broker:
+          secret: test
+    AppDirect_broker:
+      encryption_key: (( .properties.encryption_key.secret ))
+      cf:
+        admin_user: (( ..cf.uaa.system_services_credentials.identity ))
+        admin_password: (( ..cf.uaa.system_services_credentials.password ))
+      broker:
+        url: (( .properties.service_broker_url.value ))
+        user: (( .properties.service_broker_user_name.value ))
+        password: (( .properties.service_broker_user_password.value ))
+
+- name: compilation
+  resource_label: compilation
+  resource_definitions:
+   - name: ram
+     type: integer
+     configurable: true
+     default: 1_024
+   - name: ephemeral_disk
+     type: integer
+     configurable: true
+     default: 1024
+   - name: persistent_disk
+     type: integer
+     configurable: true
+     default: 0
+   - name: cpu
+     type: integer
+     configurable: true
+     default: 2
+
+  static_ip: 0
+  dynamic_ip: 1
+  max_in_flight: 1
+
+  instance_definitions:
+    - name: instances
+      type: integer
+      default: 1
+
+update:
+  canaries: 1
+  canary_watch_time: 60000-240000
+  max_in_flight: 1
+  update_watch_time: 60000-240000
+
