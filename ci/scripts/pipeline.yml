@@ -3,7 +3,8 @@ resources:
 - name: repo-master
   type: git
   source:
-    uri: https://github.com/cf-platform-eng/appdirect-boshrelease.git
+    #uri: https://github.com/cf-platform-eng/appdirect-boshrelease.git
+    uri: git://10.84.3.47/appdirect-tile.git
 
 - name: "dev-release"
   type: s3
