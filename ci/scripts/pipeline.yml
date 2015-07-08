@@ -2,9 +2,9 @@
 resources:
 - name: repo-master
   type: git
+  #uri: https://github.com/cf-platform-eng/appdirect-boshrelease.git
   source:
-    #uri: https://github.com/cf-platform-eng/appdirect-boshrelease.git
-    uri: git://10.84.3.47/appdirect-tile.git
+    uri: git://10.84.3.47/
 
 - name: "dev-release"
   type: s3
@@ -29,6 +29,7 @@ jobs:
   - get: repo
     resource: "repo-master"
   - task: create-release
+    privileged: true    # Need to run apt-get install wget...
     file: repo/ci/scripts/create-release/task.yml
   - put: dev-release
     params:

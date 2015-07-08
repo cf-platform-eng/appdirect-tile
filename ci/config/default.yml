@@ -1,5 +1,5 @@
 #repo-master-uri: "https://github.com/cf-platform-eng/appdirect-tile.git"
-repo-master-uri: "git://10.84.3.47/appdirect-tile.git"
+repo-master-uri: "git://10.84.3.47/"
 repo-master-branch: "master"
 
 release-bucket: "pivotal-appdirect-boshrelease"

@@ -4,6 +4,7 @@ image: "docker:///concourse/concourse-ci"  # Run inside a docker image that bund
 params:
   RELEASE_VERSION:                         # Comes from Environment variable
   RELEASE_NAME:
+  TILE_VERSION: 1.4
   PRODUCT_VERSION: 1.0.0
 
 inputs:
