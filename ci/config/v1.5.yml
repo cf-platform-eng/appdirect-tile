@@ -1,0 +1,4 @@
+release_version: 1.5
+ops_mgr_version: 1.5
+stemcell_version: 3012
+cf_cli_version: 6.9.0

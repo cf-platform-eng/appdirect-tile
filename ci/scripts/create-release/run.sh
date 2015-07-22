@@ -1,10 +1,22 @@
 echo $PWD
 
-export RELEASE_NAME=${RELEASE_NAME:-appdirect-dev}
-export RELEASE_VERSION=${RELEASE_VERSION:-1.0}
+echo "Env variables passed in:"
+env
+echo ""
+
+echo "Now setting custom variables"
+export RELEASE_NAME=${release_name:-appdirect-dev}
+export RELEASE_VERSION=${release_version:-1.5}
 export RELEASE_FILE=${RELEASE_NAME}_${RELEASE_VERSION}.tgz
 
-apt-get update
+# Need for downloading and bundling CF cli binary as blob
+export CF_CLI_VERSION=${cf_cli_version:-6.9.0}
+
+echo "Env variables used :"
+env
+echo ""
+
+#apt-get update
 apt-get install wget
 
 ls repo/

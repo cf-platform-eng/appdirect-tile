@@ -38,7 +38,7 @@ The Tile would allow users to register a pre-provisioned AppDirect SAAS Service 
 * Login into Ops Mgr machine via ssh
 * Switch to root
 * Go to the /var/tempest/releases folder
-* Delete the previous release bits. This only deletes from the Ops mgr. BOSH mgiht still be carrying a reference to the previous release bits.
+* Delete the previous release bits. This only deletes from the Ops mgr. BOSH might still be carrying a reference to the previous release bits.
 * Best to regenerate the release with newer/higher version and rebuild the tile if plannig on iterative development. 
   Change the version number specified in createRelease.sh
 * Go to the /var/tempest/workspace/default/metadata

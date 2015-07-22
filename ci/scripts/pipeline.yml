@@ -2,9 +2,9 @@
 resources:
 - name: repo-master
   type: git
-  #uri: https://github.com/cf-platform-eng/appdirect-boshrelease.git
   source:
-    uri: git://10.84.3.47/
+  uri: https://github.com/cf-platform-eng/appdirect-boshrelease.git
+#    uri: git://10.10.10.10/ # For local git daemon testing
 
 - name: "dev-release"
   type: s3

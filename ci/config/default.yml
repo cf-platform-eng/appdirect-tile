@@ -1,6 +1,8 @@
 #repo-master-uri: "https://github.com/cf-platform-eng/appdirect-tile.git"
-repo-master-uri: "git://10.84.3.47/"
+repo-master-uri: "git://10.10.10.10/" # For local git daemon testing
 repo-master-branch: "master"
+
+release_name: appdirect
 
 release-bucket: "pivotal-appdirect-boshrelease"
 release-access-key: ~ #{{aws-access-key}}

@@ -1,8 +1,9 @@
 #!/bin/sh
 
-TILE_NAME=AppDirect-Broker-Experimental
+VERSION=1.5
+TILE_NAME=AppDirect-Broker-Experimental-${VERSION}
 #TILE_FILE=`pwd`/*tile.yml
-TILE_FILE=`pwd`/AppDirect-Tile-1.4.yml
+TILE_FILE=`pwd`/AppDirect-Tile-v${VERSION}.yml
 RELEASE_TARFILE=`pwd`/releases/*/*.tgz
 BOSH_STEMCELL_FILE=`cat ${TILE_FILE} | grep "bosh-stemcell" | grep "^ *file:" | awk '{print $2}' `
 BOSH_STEMCELL_LOCATION=https://s3.amazonaws.com/bosh-jenkins-artifacts/bosh-stemcell/vsphere

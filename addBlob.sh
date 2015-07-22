@@ -37,4 +37,7 @@ if [ "$blobPath" != "cf_cli" ]; then
   fi
 fi
 
+echo "Doing a cat of the blobs.yml"
+cat config/blobs.yml
+
 echo ""
