@@ -1,5 +1,5 @@
-#repo-master-uri: "https://github.com/cf-platform-eng/appdirect-tile.git"
-repo-master-uri: "git://10.10.10.10/" # For local git daemon testing
+repo-master-uri: "https://github.com/cf-platform-eng/appdirect-tile.git"
+#repo-master-uri: "git://10.10.10.10/" # For local git daemon testing with only tasks
 repo-master-branch: "master"
 
 release_name: appdirect
