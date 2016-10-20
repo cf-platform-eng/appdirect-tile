@@ -18,17 +18,17 @@ set -e -x
 
 export SCHEME=https
 export PATH="/var/vcap/packages/cf_cli/bin:/var/vcap/packages/ruby_1.9.3/bin:$PATH"
-export ADMIN_USER=<%= properties.AppDirect_broker.cf.admin_user %>
-export ADMIN_PASSWORD=<%= properties.AppDirect_broker.cf.admin_password %>
+export ADMIN_USER=<%= properties.appdirect_broker.cf.admin_user %>
+export ADMIN_PASSWORD=<%= properties.appdirect_broker.cf.admin_password %>
 export DOMAIN=<%= properties.domain %>
 export API_ENDPOINT=$SCHEME://api.$DOMAIN
 export APP_DOMAIN=<%="#{app_domain}" %>
 export BROKER_NAME=AppDirectServiceBroker
 export ORG=${BROKER_NAME}-service-org
 export SPACE=${BROKER_NAME}-service-space
-export BROKER_HOST=<%= properties.AppDirect_broker.broker.url %>
-export BROKER_USER=<%= properties.AppDirect_broker.broker.user %>
-export BROKER_PASS=<%= properties.AppDirect_broker.broker.password %>
+export BROKER_HOST=<%= properties.appdirect_broker.broker.url %>
+export BROKER_USER=<%= properties.appdirect_broker.broker.user %>
+export BROKER_PASS=<%= properties.appdirect_broker.broker.password %>
 
 
 # Use this only when there are already inbuild services that need to enabled for public

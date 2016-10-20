@@ -11,19 +11,19 @@ properties:
     description: 'The CF top-level domain'
   app_domains:
     description: 'CloudFoundry application domains'
-  AppDirect_broker.app_name:
-    description: 'App Name'
-  AppDirect_broker.app_version:
-    description: 'Version of the Service Broker Application'
-  AppDirect_broker.app_uri:
-    description: 'Uri of the Service Broker Application'
-  AppDirect_broker.cf.admin_user:
+#  appdirect_broker.app_name:
+#    description: 'App Name'
+#  appdirect_broker.app_version:
+#    description: 'Version of the Service Broker Application'
+#  appdirect_broker.app_uri:
+#    description: 'Uri of the Service Broker Application'
+  appdirect_broker.cf.admin_user:
     description: 'Username of the CF admin user'
-  AppDirect_broker.cf.admin_password:
+  appdirect_broker.cf.admin_password:
     description: 'Password of the CF admin user'
-  AppDirect_broker.broker.url:
+  appdirect_broker.broker.url:
     description: 'Broker url '
-  AppDirect_broker.broker.user:
+  appdirect_broker.broker.user:
     description: 'Broker user'
-  AppDirect_broker.broker.password:
+  appdirect_broker.broker.password:
     description: 'Broker password'

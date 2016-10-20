@@ -11,41 +11,41 @@ properties:
     description: 'The CF top-level domain'
   app_domains:
     description: 'CloudFoundry application domains'
-  AppDirect_broker.app_name:
+  appdirect_broker.app_name:
     description: 'Name of the Service Broker Application'
-  AppDirect_broker.app_version:
-    description: 'Version of the Service Broker Application'
-  AppDirect_broker.app_uri:
-    description: 'Uri of the Service Broker Application'
-  AppDirect_broker.cf.admin_user:
+#  appdirect_broker.app_version:
+#    description: 'Version of the Service Broker Application'
+#  appdirect_broker.app_uri:
+#    description: 'Uri of the Service Broker Application'
+  appdirect_broker.cf.admin_user:
     description: 'Username of the CF admin user'
-  AppDirect_broker.cf.admin_password:
+  appdirect_broker.cf.admin_password:
     description: 'Password of the CF admin user'
-  AppDirect_broker.broker.url:
+  appdirect_broker.broker.url:
     description: 'Broker url '
-  AppDirect_broker.broker.user:
+  appdirect_broker.broker.user:
     description: 'Broker user'
-  AppDirect_broker.broker.password:
+  appdirect_broker.broker.password:
     description: 'Broker password'
-  AppDirect_broker.uaa.client_id:
-    description: 'UAA Client ID for AppDirect'
-    default: appdirect-sso
-  AppDirect_broker.uaa.client_secret:
-    description: 'UAA Client secret for AppDirect'
-  AppDirect_broker.uaa.scope:
-    description: 'UAA Client Scope'
-    default: openid
-  AppDirect_broker.uaa.authorized_grant_types:
-    description: 'UAA Authorized grant types '
-    default: authorization_code
-  AppDirect_broker.uaa.authorities:
-    description: 'UAA Authorities '
-    default: "openid,cloud_controller"
-  AppDirect_broker.uaa.redirect_uri:
-    description: 'UAA Redirect URI to AppDirect'
-  AppDirect_broker.uaa.autoapprove:
-    description: 'UAA Autoapprove'
-    default: openid
-  AppDirect_broker.uaa.access_token_validity:
-    description: 'UAA Access token validity'
-    default: 3600
+#  appdirect_broker.uaa.client_id:
+#    description: 'UAA Client ID for AppDirect'
+#    default: appdirect-sso
+#  appdirect_broker.uaa.client_secret:
+#    description: 'UAA Client secret for AppDirect'
+#  appdirect_broker.uaa.scope:
+#    description: 'UAA Client Scope'
+#    default: openid
+#  appdirect_broker.uaa.authorized_grant_types:
+#    description: 'UAA Authorized grant types '
+#    default: authorization_code
+#  appdirect_broker.uaa.authorities:
+#    description: 'UAA Authorities '
+#    default: "openid,cloud_controller"
+#  appdirect_broker.uaa.redirect_uri:
+#    description: 'UAA Redirect URI to AppDirect'
+#  appdirect_broker.uaa.autoapprove:
+#    description: 'UAA Autoapprove'
+#    default: openid
+#  appdirect_broker.uaa.access_token_validity:
+#    description: 'UAA Access token validity'
+#    default: 3600

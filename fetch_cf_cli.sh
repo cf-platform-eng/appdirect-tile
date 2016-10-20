@@ -3,6 +3,6 @@
 
 # Remove older references to cf_cli
 ./removeBlob.sh cf-linux-amd64.tgz 
-CF_CLI_VERSION=${cf_cli_version:-6.9.0}
+CF_CLI_VERSION=${cf_cli_version:-6.22.1}
 wget "https://cli.run.pivotal.io/stable?release=linux64-binary&version=${CF_CLI_VERSION}&source=github-rel" -O cf-linux-amd64.tgz
 echo no | ./addBlob.sh cf-linux-amd64.tgz cf_cli

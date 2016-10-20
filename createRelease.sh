@@ -1,9 +1,9 @@
 #!/bin/sh
 
 # For use to create final release tarball
-VERSION=1.5
+VERSION=1.7
 CREATE_FINAL_TARBALL=true
-RELEASE_NAME=AppDirect_broker
+RELEASE_NAME=appdirect_broker
 
 echo "Cleanup previous release ..."
 rm -rf releases/* .dev_builds/* .final_builds/*
