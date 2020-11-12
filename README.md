@@ -1,3 +1,5 @@
+# appdirect-tile is no longer actively maintained by VMware.
+
 # AppDirect Tile Repo
 
 This is a repo to generate an App Direct Service Broker Tile that can be imported into Pivotal Cloud Foundry Ops Mgr.
